@@ -4,6 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: chinni81/app:1.0 # Tag the image for Docker Hub
     ports:
       - "5000:5000" # Map Flask app to localhost:5000
     environment:
@@ -33,6 +34,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: chinni81/test:1.0 # Tag the image for Docker Hub
     command: pytest  # Run the tests on startup
     depends_on:
       - app
