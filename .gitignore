@@ -1,0 +1,38 @@
+# Ignore the virtual environment directory
+myenv/
+
+# Ignore Python bytecode files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Ignore instance directory (Flask, etc.)
+instance/
+
+# Ignore pytest cache
+.pytest_cache/
+
+# Ignore environment-specific or editor-specific files
+*.env
+*.venv
+*.idea/
+.vscode/
+
+# Ignore system files (Windows)
+Thumbs.db
+Desktop.ini
+
+
+
+# Ignore test-specific artifacts and cache
+tests/__pycache__/
+
+# Ignore dist-info and egg-info directories (Python package metadata)
+*.dist-info/
+*.egg-info/
+
+# Ignore other common files for Python projects
+*.log
+*.pot
+*.pyenv

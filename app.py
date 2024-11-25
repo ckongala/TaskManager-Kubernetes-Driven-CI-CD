@@ -1,10 +1,10 @@
-from sqlite3 import OperationalError
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 import os
-import time
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # Database configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv(
@@ -29,10 +29,10 @@ class Task(db.Model):
 with app.app_context():
     db.create_all()
 
-
+# Route to serve HTML page
 @app.route('/')
 def index():
-    return "App is connected to DB"
+    return render_template('index.html')  # This will render the HTML from the templates folder
 
 # CREATE task
 @app.route('/tasks', methods=['POST'])

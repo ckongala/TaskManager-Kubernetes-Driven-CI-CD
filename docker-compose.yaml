@@ -29,5 +29,19 @@ services:
       timeout: 5s
       retries: 5
 
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: pytest  # Run the tests on startup
+    depends_on:
+      - app
+    environment:
+      - SQLALCHEMY_DATABASE_URI=sqlite:///test.db  # Use SQLite for testing
+      - PYTHONPATH=/app # Ensure Python looks in the root of the project
+    volumes:
+      - .:/app  # Mount the entire project folder to /app inside the container
+    working_dir: /app  # Set the working directory for the test container
+    
 volumes:
   db_data:

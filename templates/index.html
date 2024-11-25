@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <h1>Task Manager</h1>
+
+    <div class="task-form">
+        <h2>Create Task</h2>
+        <input type="text" id="taskTitle" placeholder="Task Title" required>
+        <textarea id="taskDescription" placeholder="Task Description"></textarea>
+        <button id="createTaskBtn">Create Task</button>
+    </div>
+
+    <h2>Tasks</h2>
+    <ul class="task-list" id="taskList">
+        <!-- Tasks will be listed here -->
+    </ul>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

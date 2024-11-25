@@ -1,3 +1,5 @@
 flask
 flask-sqlalchemy
 mysqlclient
+flask-cors
+pytest
