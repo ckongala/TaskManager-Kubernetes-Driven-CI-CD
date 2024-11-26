@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pytest-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pytest-app
+  template:
+    metadata:
+      labels:
+        app: pytest-app
+    spec:
+      containers:
+        - name: pytest-app
+          image: 866934333672.dkr.ecr.ap-northeast-1.amazonaws.com/teamprojectrepo:test-1.1
+          command: ["pytest"]
+          env:
+            - name: SQLALCHEMY_DATABASE_URI
+              value: "sqlite:///test.db"
+            - name: PYTHONPATH
+              value: "/app"
+          volumeMounts:
+            - name: app-source
+              mountPath: /app
+      volumes:
+        - name: app-source
+          configMap:
+            name: app-source
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pytest-app-service
+spec:
+  selector:
+    app: pytest-app
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080

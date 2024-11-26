@@ -1,4 +1,5 @@
-const apiUrl = 'http://localhost:5000/tasks';
+// const apiUrl = 'http://localhost:5000/tasks';
+const apiUrl = `http://${window.location.hostname}:5000/tasks`; 
 
 // Function to fetch and display tasks
 function loadTasks() {
