@@ -58,7 +58,7 @@ jobs:
 
       - name: Set up EKS cluster context
         run: |
-          aws eks --region ${{ secrets.AWS_REGION }} update-kubeconfig --name eks-cluster
+          aws eks --region ${{ secrets.AWS_REGION }} update-kubeconfig --name team-3
 
       - name: Apply Kubernetes configurations
         run: |
