@@ -1,6 +1,6 @@
-<h1>NOTES<h1>
+
 ```
-  > Node are simple VM(EC2), inside nodes we have pods, inside pods we have containers, those containers running on top of docker images.
+> Node are simple VM(EC2), inside nodes we have pods, inside pods we have containers, those containers running on top of docker images.
 > Cluster is a set of nodes together.
 
 two type of servers:
